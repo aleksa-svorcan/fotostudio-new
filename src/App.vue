@@ -15,7 +15,7 @@ export default {
 </script>
 <style lang="scss">
 body {
-  font-family: 'Antonio', sans-serif;
+  font-family: 'Lato', sans-serif;
   p {
     font-size: 17px;
   }
@@ -59,7 +59,7 @@ body {
 }
 
 .content-container-half-right {
-  z-index: 2;
+  z-index: 1;
   opacity: 1;
   position: relative;
   max-width: 780px;

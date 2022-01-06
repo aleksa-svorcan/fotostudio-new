@@ -1,11 +1,6 @@
 <template>
-  <section id="work" class="page-section row q-px-sm home-how-it-works-section">
-    <div class="col-12 col-md-6">
-      <div class="content-container-half-left q-py-xl flex items-center full-height justify-center">
-        <h4 class="text-white q-mt-none"></h4>
-      </div>
-    </div>
-    <div class="col-12 col-md-6 bg-primary visible-col q-py-xl">
+  <section id="work" class="page-section row q-px-sm home-what-we-do-section">
+    <div class="col-12 col-md-6 bg-primary visible-col q-py-md-xl offset-md-6">
       <div class="content-container-half-right column">
         <div class="q-mb-md bg-primary text-white q-px-lg">
           <h6 class="text-center q-mb-md">Od 1995. godine se trudimo da idemo u korak sa vremenom i odgovorimo na sve zadatke savremene tehnologije I napredka fotografskih usluga. Trud i iscrpan rad su nas doveli do velikogг broja stalnih i zadovoljnih mušterija bilo u našoj radnji – bilo na terenu. Ono po čemu se izdvajamo od ostalih jeste veoma saradljiv odnos sa našim vernim klijentima, čijim smo sugestijama i pohvalama vremenom postajali sve bolji i opravdali očekivanja.</h6>
@@ -18,7 +13,10 @@
         <div class="q-mb-md bg-grey-4 text-primary">
           <div>
             <h4 class="text-center q-mt-md"><span class="section-title">Venčanja</span></h4>
-            <h6 class="text-center q-mb-md q-px-lg">Dugogodišnja tradicija,preko 1000 venčanja koje smo fotografisali za Vas kao i ekipa ljudi koja ima veliko iskustvo i znanje su garant da će Vaši nezaboravni trenutci ostati zabeleženi kako dolikuje. Svesni smo da je za mladence ovaj dan jedan od najbitnijih I na sebe preuzimamo kompletnu timsku odgovornost za najvernije i najbolje očuvanje sećanja.</h6>
+            <h6 class="text-center q-mb-md q-px-lg">Venčanja za mladence predstavljaju jedan od najbitnijih i najlepših dana u životu. Dugogodišnjim radom,
+              znanjem i iskustvom Vam garantujemo da će Vaši nezaboravni trenuci biti zabeleženi po Vašim željama i
+              zamislima i kvalitetom uspešno odoleti rubu vremena. Na Vama je da zamislite i poželite - ostalo je naša
+              briga.</h6>
             <div class="row justify-center">
               <router-link class="route-link" to="/vencanja">Pogledajte galeriju</router-link>
             </div>
@@ -27,12 +25,12 @@
       </div>
     </div>
     <div class="col-12 col-md-6 relative-position parallax-col">
-      <img class="how-it-works-image" src="~assets/vencanje.jpg"/>
+      <img class="what-we-do-image" src="~assets/vencanje.jpg"/>
     </div>
-    <div class="col-12 col-md-6 relative-position parallax-col">
-      <img class="how-it-works-image" src="~assets/korporativa.jpg"/>
+    <div class="col-12 col-md-6 relative-position parallax-col column-order-4">
+      <img class="what-we-do-image" src="~assets/korporativa.jpg"/>
     </div>
-    <div class="col-12 col-md-6 bg-grey-4 visible-col q-py-xl row items-center">
+    <div class="col-12 col-md-6 bg-grey-4 visible-col q-py-xl row items-center column-order-3">
       <div class="content-container-half-right column">
         <div class="q-mb-md bg-grey-4 text-primary">
           <div>
@@ -49,8 +47,10 @@
       <div class="content-container-half-left column">
         <div class="q-mb-md bg-grey-4 text-primary">
           <div>
-            <h4 class="text-center q-mt-md"><span class="section-title">Rodjendani</span></h4>
-            <h6 class="text-center q-mb-md q-px-lg">Umesto da trčkarate sa fotoaparatom po igraonici,restoranu ili kući i trudite se da uhvatite sve bitne i zanimljive momente slavlja, prepustite nama da za Vas to kvalitetno i profesionalno uradimo a Vi možete sa prijateljima da uživate u jedinstvenom trenutku. Nudimo Vam profesionalnu uslugu fotografisanja i snimanja rođendana Vaših najmilijih.</h6>
+            <h4 class="text-center q-mt-md"><span class="section-title">Rođendani</span></h4>
+            <h6 class="text-center q-mb-md q-px-lg">Ukoliko ste u potrazi za nečim zanimljivim, lepim, jedinstvenim, na pravoj ste adresi. Pomoću
+              najsavremenije opreme stvaramo nezaboravne fotografije Vaših prinčeva i princeza i time čuvamo
+              uspomene na najbezbrižniji period - detinjstvo.</h6>
             <div class="row justify-center">
               <router-link class="route-link" to="/rodjendani">Pogledajte galeriju</router-link>
             </div>
@@ -59,13 +59,28 @@
       </div>
     </div>
     <div class="col-12 col-md-6 relative-position parallax-col">
-      <img class="how-it-works-image" src="~assets/rodjendan.jpg"/>
+      <img class="what-we-do-image" src="~assets/rodjendan.jpg"/>
     </div>
-    <div class="col-12 col-md-6 relative-position parallax-col">
-      <img class="how-it-works-image" src="~assets/krstenje.jpg"/>
+    <div class="col-12 col-md-6 relative-position parallax-col column-order-7">
+      <img class="what-we-do-image" src="~assets/krstenje.jpg"/>
+    </div>
+    <div class="col-12 col-md-6 bg-grey-4 visible-col q-py-xl row items-center column-order-6">
+      <div class="content-container-half-right column">
+        <div class="q-mb-md bg-grey-4 text-primary">
+          <div>
+            <h4 class="text-center q-mt-md"><span class="section-title">Rođendani (18)</span></h4>
+            <h6 class="text-center q-mb-md q-px-lg">Na ovaj dan okružite se najdražima, naoružajte se osmehom i dobrim raspoloženjem a mi žemo se
+              potruditi da celokupna atmosfera bude zabeležena kao u bajci. Tu smo da zajedno uživamo i da
+              ovekovečimo što spontanije momente.</h6>
+            <div class="row justify-center">
+              <router-link class="route-link" to="/krstenja">Pogledajte galeriju</router-link>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="col-12 col-md-6 bg-grey-4 visible-col q-py-xl row items-center">
-      <div class="content-container-half-right column">
+      <div class="content-container-half-left column">
         <div class="q-mb-md bg-grey-4 text-primary">
           <div>
             <h4 class="text-center q-mt-md"><span class="section-title">Krštenja</span></h4>
@@ -77,12 +92,15 @@
         </div>
       </div>
     </div>
+    <div class="col-12 col-md-6 relative-position parallax-col">
+      <img class="what-we-do-image" src="~assets/krstenje.jpg"/>
+    </div>
   </section>
 </template>
 <script>
 
 export default {
-  name: 'HomeHowItWorksSection'
+  name: 'HomeWhatWeDoSection'
 }
 </script>
 <style lang="scss" scoped>
@@ -97,33 +115,59 @@ export default {
   top: 0;
 }
 
-.home-how-it-works-section {
+.home-what-we-do-section {
   padding: 0;
   position: relative;
   width: 100%;
   overflow: hidden;
 }
 
-.how-it-works-image {
+.what-we-do-image {
   position: absolute;
   z-index: 1;
   overflow: hidden;
   height: auto;
   width: 100%;
-  top: -100px;
+  min-height: 100%;
+  bottom: 0;
   left: 0;
 }
 
 .parallax-col {
-  height: 450px;
-  @media only screen and (min-width: 600px) {
-    height: auto;
-  }
+  min-height: 450px;
 }
 
 .route-link {
   font-size: 20px;
   color: $secondary;
   font-weight: bold;
+}
+
+.column-order-4 {
+  order: 4;
+  @media only screen and (min-width: 600px) {
+    order: initial;
+  }
+}
+
+.column-order-3 {
+  order: 3;
+  @media only screen and (min-width: 600px) {
+    order: initial;
+  }
+}
+
+.column-order-6 {
+  order: 6;
+  @media only screen and (min-width: 600px) {
+    order: initial;
+  }
+}
+
+.column-order-7 {
+  order: 7;
+  @media only screen and (min-width: 600px) {
+    order: initial;
+  }
 }
 </style>

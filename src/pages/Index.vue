@@ -9,7 +9,7 @@
 
 <script>
 import HomeHeroSection from 'components/HomeHeroSection'
-import HomeWhatWeDoSection from 'components/HomeHowItWorksSection'
+import HomeWhatWeDoSection from 'components/HomeWhatWeDoSection'
 import HomeSolutionsSection from 'components/HomeSolutionsSection'
 import HomeContactSection from 'components/HomeContactSection'
 export default {
