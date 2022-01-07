@@ -13,12 +13,11 @@
             <img class="logo" src="">
           </q-toolbar-title>
           <div class="row gt-sm">
-            <a class="q-mr-md cursor-pointer" @click="scrollToElement('work')">How It Works</a>
-            <a class="q-mr-md cursor-pointer" @click="scrollToElement('technologies')">Solutions</a>
-            <a class="q-mr-md cursor-pointer" @click="scrollToElement('clients')">Resources</a>
-            <a class="q-mr-md cursor-pointer" @click="scrollToElement('about')">About</a>
-            <a class="q-mr-md cursor-pointer" @click="scrollToElement('contact')">Contact</a>
-            <a class="q-ml-xl text-weight-bold cursor-pointer" @click="scrollToElement('contact')">Log In</a>
+            <router-link to="/" v-if="$route.path !== '/'"><span class="text-white text-weight-bold cursor-pointer">Početna</span></router-link>
+            <a v-if="$route.path === '/'" class="q-mr-md cursor-pointer" @click="scrollToElement('home-hero-section')">O nama</a>
+            <a v-if="$route.path === '/'" class="q-mr-md cursor-pointer" @click="scrollToElement('work')">Portfolio</a>
+            <a v-if="$route.path === '/'" class="q-mr-md cursor-pointer" @click="scrollToElement('solutions')">Usluge</a>
+            <a v-if="$route.path === '/'" class="q-mr-md cursor-pointer" @click="scrollToElement('contact')">Kontakt</a>
           </div>
         </q-toolbar>
       </div>

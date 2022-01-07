@@ -1,5 +1,5 @@
 <template>
-  <section id="work" class="page-section row q-px-sm home-what-we-do-section">
+  <section class="page-section row q-px-sm home-what-we-do-section">
     <div class="col-12 col-md-6 bg-primary visible-col q-py-md-xl offset-md-6">
       <div class="content-container-half-right column">
         <div class="q-mb-md bg-primary text-white q-px-lg">
@@ -31,7 +31,7 @@
       <img class="what-we-do-image" src="~assets/korporativa.jpg"/>
     </div>
     <div class="col-12 col-md-6 bg-grey-4 visible-col q-py-xl row items-center column-order-3">
-      <div class="content-container-half-right column">
+      <div class="content-container-half-right column" id="work">
         <div class="q-mb-md bg-grey-4 text-primary">
           <div>
             <h4 class="text-center q-mt-md"><span class="section-title">Korporativne fotografije</span></h4>
@@ -73,7 +73,7 @@
               potruditi da celokupna atmosfera bude zabeležena kao u bajci. Tu smo da zajedno uživamo i da
               ovekovečimo što spontanije momente.</h6>
             <div class="row justify-center">
-              <router-link class="route-link" to="/krstenja">Pogledajte galeriju</router-link>
+              <router-link class="route-link" to="/punoletstva">Pogledajte galeriju</router-link>
             </div>
           </div>
         </div>
