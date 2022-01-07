@@ -62,13 +62,13 @@
       <img class="what-we-do-image" src="~assets/rodjendan.jpg"/>
     </div>
     <div class="col-12 col-md-6 relative-position parallax-col column-order-7">
-      <img class="what-we-do-image" src="~assets/krstenje.jpg"/>
+      <img class="what-we-do-image" src="~assets/MJL_3500.jpg"/>
     </div>
     <div class="col-12 col-md-6 bg-grey-4 visible-col q-py-xl row items-center column-order-6">
       <div class="content-container-half-right column">
         <div class="q-mb-md bg-grey-4 text-primary">
           <div>
-            <h4 class="text-center q-mt-md"><span class="section-title">Rođendani (18)</span></h4>
+            <h4 class="text-center q-mt-md"><span class="section-title">Punoletstva</span></h4>
             <h6 class="text-center q-mb-md q-px-lg">Na ovaj dan okružite se najdražima, naoružajte se osmehom i dobrim raspoloženjem a mi žemo se
               potruditi da celokupna atmosfera bude zabeležena kao u bajci. Tu smo da zajedno uživamo i da
               ovekovečimo što spontanije momente.</h6>
