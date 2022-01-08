@@ -60,6 +60,7 @@ export default {
   }
   .Masthead__image.is-fixed>img {
     max-width: 100vw;
+    object-position: bottom;
     @media only screen and (min-width: 600px) {
       max-width: 50vw;
     }

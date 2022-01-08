@@ -6,7 +6,7 @@ const routes = [
     children: [
       { path: '', component: () => import('pages/Index.vue') },
       { path: 'vencanja', component: () => import('pages/PageGallery.vue') },
-      { path: 'rodjendani', component: () => import('pages/PageGallery.vue') },
+      { path: 'krstenja', component: () => import('pages/PageGallery.vue') },
       { path: 'rodjendani', component: () => import('pages/PageGallery.vue') },
       { path: 'punoletstva', component: () => import('pages/PageGallery.vue') },
       { path: 'korporativne-fotografije', component: () => import('pages/PageGallery.vue') }
