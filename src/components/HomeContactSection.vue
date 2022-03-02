@@ -5,11 +5,11 @@
       <div class="col-12 col-md-6 justify-center form-left-column">
         <h5 class="text-center">Fotostudio Express</h5>
         <q-form
-          @submit="onSubmit"
+          @submit="onSubmit1"
           class="contact-form">
           <q-input
             ref="input1"
-            :readonly="loading"
+            :readonly="loading1"
             outlined
             bg-color="white"
             v-model="name"
@@ -18,7 +18,7 @@
             :rules="[ val => val && val.length > 0 || '']"/>
           <q-input
             ref="input2"
-            :readonly="loading"
+            :readonly="loading1"
             outlined
             bg-color="white"
             type="email"
@@ -28,7 +28,7 @@
             :rules="[ val => val && val.length > 0 || '']"/>
           <q-input
             ref="input3"
-            :readonly="loading"
+            :readonly="loading1"
             outlined
             bg-color="white"
             type="text"
@@ -38,7 +38,7 @@
             :rules="[ val => val && val.length > 0 || '']"/>
           <q-input
             ref="input4"
-            :readonly="loading"
+            :readonly="loading1"
             outlined
             bg-color="white"
             type="textarea"
@@ -47,7 +47,7 @@
             lazy-rules
             :rules="[ val => val && val.length > 0 || '']"/>
           <div class="flex justify-center q-mb-xl">
-            <q-btn :loading="loading" class="q-px-xl q-py-xs text-weight-bold" no-caps label="POŠALJI" type="submit" color="secondary" text-color="white"></q-btn>
+            <q-btn :loading="loading1" class="q-px-xl q-py-xs text-weight-bold" no-caps label="POŠALJI" type="submit" color="secondary" text-color="white"></q-btn>
           </div>
         </q-form>
         <div class="map-container">
@@ -57,46 +57,46 @@
       <div class="col-12 col-md-6 justify-center form-right-column">
         <h5 class="text-center">Foto/video događaji</h5>
         <q-form
-          @submit="onSubmit"
+          @submit="onSubmit2"
           class="contact-form">
           <q-input
-            ref="input1"
-            :readonly="loading"
+            ref="input12"
+            :readonly="loading2"
             outlined
             bg-color="white"
-            v-model="name"
+            v-model="name2"
             label="Ime i prezime *"
             lazy-rules
             :rules="[ val => val && val.length > 0 || '']"/>
           <q-input
-            ref="input2"
-            :readonly="loading"
+            ref="input22"
+            :readonly="loading2"
             outlined
             bg-color="white"
             type="email"
-            v-model="email"
+            v-model="email2"
             label="Email *"
             lazy-rules
             :rules="[ val => val && val.length > 0 || '']"/>
           <div class="row">
             <div class="col-12 col-md-6 q-pr-sm">
               <q-input
-                ref="input3"
-                :readonly="loading"
+                ref="input32"
+                :readonly="loading2"
                 outlined
                 bg-color="white"
                 type="text"
-                v-model="subject"
+                v-model="location2"
                 label="Lokacija *"
                 lazy-rules
                 :rules="[ val => val && val.length > 0 || '']"/>
             </div>
             <div class="col-12 col-md-6 q-pl-sm">
-              <q-input bg-color="white" label="Datum događaja *" ref="input5" filled v-model="date" mask="date" :rules="['date']">
+              <q-input bg-color="white" label="Datum događaja *" ref="input52" filled v-model="date2" mask="date" :rules="['date']">
                 <template v-slot:append>
                   <q-icon name="event" class="cursor-pointer">
                     <q-popup-proxy ref="qDateProxy" cover transition-show="scale" transition-hide="scale">
-                      <q-date v-model="date">
+                      <q-date v-model="date2">
                         <div class="row items-center justify-end">
                           <q-btn v-close-popup label="Close" color="primary" flat></q-btn>
                         </div>
@@ -108,17 +108,17 @@
             </div>
           </div>
           <q-input
-            ref="input4"
-            :readonly="loading"
+            ref="input42"
+            :readonly="loading2"
             outlined
             bg-color="white"
             type="textarea"
-            v-model="message"
+            v-model="message2"
             label="Poruka *"
             lazy-rules
             :rules="[ val => val && val.length > 0 || '']"/>
           <div class="flex justify-center items-end q-mb-xl">
-            <q-btn :loading="loading" class="q-px-xl q-py-xs text-weight-bold" no-caps label="POŠALJI" type="submit" color="secondary" text-color="white"></q-btn>
+            <q-btn :loading="loading2" class="q-px-xl q-py-xs text-weight-bold" no-caps label="POŠALJI" type="submit" color="secondary" text-color="white"></q-btn>
           </div>
         </q-form>
         <div class="map-container">
@@ -132,10 +132,8 @@
 
 <script>
 import { Notify } from 'quasar'
-(function () {
-  // eslint-disable-next-line no-undef
-  emailjs.init('user_A6Ay0vMPffsKgyKzHVzTp')
-})()
+import { init } from '@emailjs/browser'
+init('4T0nzsh6kOgYIUnFl')
 export default {
   name: 'HomeContactSection',
   data () {
@@ -144,21 +142,26 @@ export default {
       email: '',
       subject: '',
       message: '',
-      date: null,
-      loading: false
+      loading1: false,
+      name2: '',
+      email2: '',
+      location2: '',
+      date2: null,
+      message2: '',
+      loading2: false
     }
   },
   methods: {
-    onSubmit () {
-      this.loading = true
+    onSubmit1 () {
+      this.loading1 = true
       const that = this
       // eslint-disable-next-line no-undef
-      emailjs.send('service_yi50tmp', 'template_iugjtrc', {
+      emailjs.send('service_o5gmerl', 'template_wxzz2vt', {
         name: this.name,
         subject: this.subject,
         email: this.email,
         message: this.message
-      }).then(() => {
+      }, '4T0nzsh6kOgYIUnFl').then(() => {
         that.name = ''
         that.subject = ''
         that.email = ''
@@ -166,9 +169,9 @@ export default {
         Notify.create({
           type: 'positive',
           position: 'center',
-          message: 'Email sent! We will contact you as soon as possible!'
+          message: 'Poruka je poslata! Kontaktiraćemo Vas uskoro!'
         })
-        that.loading = false
+        that.loading1 = false
         this.$refs.input1.resetValidation()
         this.$refs.input2.resetValidation()
         this.$refs.input3.resetValidation()
@@ -177,7 +180,43 @@ export default {
         Notify.create({
           type: 'negative',
           position: 'center',
-          message: 'Something went wrong with our contact service. Try again later or contact us manually!'
+          message: 'Naša kontakt služba trenutno ne radi. Pokušajte drugi vid kontakta!'
+        })
+        console.log('error', error)
+      })
+    },
+    onSubmit2 () {
+      this.loading2 = true
+      const that = this
+      // eslint-disable-next-line no-undef
+      emailjs.send('service_o5gmerl', 'template_aeeeym1', {
+        name: this.name2,
+        location: this.location2,
+        email: this.email2,
+        message: this.message2,
+        date: this.date2
+      }, '4T0nzsh6kOgYIUnFl').then(() => {
+        that.name2 = ''
+        that.location2 = ''
+        that.email2 = ''
+        that.message2 = ''
+        that.date2 = ''
+        Notify.create({
+          type: 'positive',
+          position: 'center',
+          message: 'Poruka je poslata! Kontaktiraćemo Vas uskoro!'
+        })
+        that.loading2 = false
+        this.$refs.input12.resetValidation()
+        this.$refs.input22.resetValidation()
+        this.$refs.input32.resetValidation()
+        this.$refs.input42.resetValidation()
+        this.$refs.input52.resetValidation()
+      }).catch(error => {
+        Notify.create({
+          type: 'negative',
+          position: 'center',
+          message: 'Naša kontakt služba trenutno ne radi. Pokušajte drugi vid kontakta!'
         })
         console.log('error', error)
       })

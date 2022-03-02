@@ -56,7 +56,7 @@
         </div>
       </div>
       <div class="col-12 col-md-6 relative-position">
-      <img class="gift-image" src="~assets/img4-min.jpg"/>
+      <img class="gift-image" src="~assets/MJL_9025.jpg"/>
     </div>
     </div>
   </section>
