@@ -9,7 +9,7 @@
       <q-tab-panels v-model="tab" animated>
         <q-tab-panel name="images">
           <q-carousel
-            v-if="$route.path !== '/korporativne-fotografije'"
+            v-if="noNestedTabs"
             ref="carousel"
             class="relative-position window-height"
             animated
@@ -49,7 +49,7 @@
               </q-carousel-control>
             </template>
           </q-carousel>
-          <div v-else class="full-width">
+          <div v-if="$route.path === '/korporativne-fotografije'" class="full-width">
             <q-tabs v-model="nestedTab">
               <q-tab name="category1" label="Enterijeri" @click="nestedImageSlide = 1"/>
               <q-tab name="category2" label="Lifestyle" @click="nestedImageSlide = 1"/>
@@ -227,6 +227,98 @@
               </q-tab-panel>
             </q-tab-panels>
           </div>
+          <div v-if="$route.path === '/vencanja'" class="full-width">
+            <q-tabs v-model="nestedTab">
+              <q-tab name="category1" label="Wedding" @click="nestedImageSlide = 1"/>
+              <q-tab name="category2" label="Pre Wedding" @click="nestedImageSlide = 1"/>
+            </q-tabs>
+            <q-tab-panels v-model="nestedTab" animated>
+              <q-tab-panel name="category1">
+                <q-carousel
+                  ref="nestedCarousel1"
+                  class="relative-position window-height"
+                  animated
+                  :fullscreen="nestedFullscreen"
+                  v-model="nestedImageSlide"
+                  infinite
+                  :autoplay="nestedAutoplay"
+                  transition-prev="slide-right"
+                  transition-next="slide-left"
+                  @mouseenter="nestedAutoplay = false"
+                  @mouseleave="nestedAutoplay = true">
+                  <q-carousel-slide v-for="(image, index) in galleryImages.category1"  :key="index" :name="index + 1">
+                    <div class="carousel-image-container">
+                      <q-img class="carousel-image" :src="'img/' + image"/>
+                    </div>
+                  </q-carousel-slide>
+                  <template v-slot:control>
+                    <q-carousel-control class="full-height column justify-center" position="left" :offset="[30, 0]">
+                      <q-btn
+                        push round color="black" text-color="white" icon="arrow_left"
+                        @click="$refs.nestedCarousel1.previous()"></q-btn>
+                    </q-carousel-control>
+                    <q-carousel-control class="full-height column justify-center" position="right" :offset="[30, 0]">
+                      <q-btn
+                        push round color="black" text-color="white" icon="arrow_right"
+                        @click="$refs.nestedCarousel1.next()"></q-btn>
+                    </q-carousel-control>
+                    <q-carousel-control
+                      position="bottom-right"
+                      :offset="[18, 18]"
+                    >
+                      <q-btn
+                        push round dense color="white" text-color="primary"
+                        :icon="fullscreen ? 'fullscreen_exit' : 'fullscreen'"
+                        @click="fullscreen = !fullscreen"
+                      ></q-btn>
+                    </q-carousel-control>
+                  </template>
+                </q-carousel>
+              </q-tab-panel>
+              <q-tab-panel name="category2">
+                <q-carousel
+                  ref="nestedCarousel2"
+                  class="relative-position window-height"
+                  animated
+                  :fullscreen="nestedFullscreen"
+                  v-model="nestedImageSlide"
+                  infinite
+                  :autoplay="nestedAutoplay"
+                  transition-prev="slide-right"
+                  transition-next="slide-left"
+                  @mouseenter="nestedAutoplay = false"
+                  @mouseleave="nestedAutoplay = true">
+                  <q-carousel-slide v-for="(image, index) in galleryImages.category2"  :key="index" :name="index + 1">
+                    <div class="carousel-image-container">
+                      <q-img class="carousel-image" :src="'img/' + image"/>
+                    </div>
+                  </q-carousel-slide>
+                  <template v-slot:control>
+                    <q-carousel-control class="full-height column justify-center" position="left" :offset="[30, 0]">
+                      <q-btn
+                        push round color="black" text-color="white" icon="arrow_left"
+                        @click="$refs.nestedCarousel2.previous()"></q-btn>
+                    </q-carousel-control>
+                    <q-carousel-control class="full-height column justify-center" position="right" :offset="[30, 0]">
+                      <q-btn
+                        push round color="black" text-color="white" icon="arrow_right"
+                        @click="$refs.nestedCarousel2.next()"></q-btn>
+                    </q-carousel-control>
+                    <q-carousel-control
+                      position="bottom-right"
+                      :offset="[18, 18]"
+                    >
+                      <q-btn
+                        push round dense color="white" text-color="primary"
+                        :icon="fullscreen ? 'fullscreen_exit' : 'fullscreen'"
+                        @click="fullscreen = !fullscreen"
+                      ></q-btn>
+                    </q-carousel-control>
+                  </template>
+                </q-carousel>
+              </q-tab-panel>
+            </q-tab-panels>
+          </div>
         </q-tab-panel>
         <q-tab-panel name="videos">
           <div class="row full-width flex justify-center q-gutter-sm">
@@ -275,18 +367,26 @@ export default {
     galleryImages () {
       switch (this.$route.path) {
         case '/vencanja':
-          return ['/vencanja/01.jpg', '/vencanja/02.jpg', '/vencanja/07.jpg', '/vencanja/_MG_0286.5b3ae5a3.jpg', '/vencanja/_MG_1476.38c31d44.jpg', '/vencanja/_MG_1673.320ddadc.jpg',
-            '/vencanja/_MG_1695.cf02e300.jpg', '/vencanja/_MG_4532.84ed4b6f.jpg', '/vencanja/_MG_4538.c9a5200c.jpg', '/vencanja/_MG_4544.cdac3d3d.jpg', '/vencanja/_MG_4555.8582c457.jpg',
-            '/vencanja/_MG_4559.a5bb4c4e.jpg', '/vencanja/_MG_4570.c915cb43.jpg', '/vencanja/_MG_4644.a7c80b8d.jpg', '/vencanja/_MG_4654.1fed7aa3.jpg', '/vencanja/_MG_6948.7aa35d7a.jpg',
-            '/vencanja/_MG_7151.b9d2aa39.jpg', '/vencanja/_MG_7314.9a664d7d.jpg', '/vencanja/_MG_8855.52e294f3.jpg', '/vencanja/_MG_8867.ce4c68a0.jpg', '/vencanja/_MG_8961.de66cc6c.jpg',
-            '/vencanja/_MG_8974.dee04875.jpg', '/vencanja/IMG_1286.d0e20c71.jpg', '/vencanja/IMG_6897.f0293b3d.jpg', '/vencanja/IMG_6958.f6e28fa3.jpg', '/vencanja/IMG_6959.9ffe9354.jpg',
-            '/vencanja/JAR_1471.jpg', '/vencanja/JAR_1595.jpg', '/vencanja/JAR_1642.jpg', '/vencanja/JAR_1852.jpg', '/vencanja/JAR_1988.jpg', '/vencanja/JAR_2054.jpg', '/vencanja/JAR_2074.jpg',
-            '/vencanja/JAR_2149.jpg', '/vencanja/JAR_2158.jpg', '/vencanja/JAR_2203.jpg', '/vencanja/JAR_2422.jpg', '/vencanja/JAR_2547.jpg', '/vencanja/JAR_2631.jpg', '/vencanja/JAR_2819.jpg',
-            '/vencanja/JAR_2869.jpg', '/vencanja/JAR_2932.jpg', '/vencanja/JAR_6087.jpg', '/vencanja/JAR_6114.jpg', '/vencanja/JAR_6984.JPG', '/vencanja/JAR_7027.jpg', '/vencanja/JAR_7272.JPG',
-            '/vencanja/JAR_7276.JPG', '/vencanja/JAR_7310.JPG', '/vencanja/JAR_7315.jpg', '/vencanja/MJL_0011.jpg', '/vencanja/MJL_0027.jpg', '/vencanja/MJL_0105.jpg', '/vencanja/MJL_0129.jpg',
-            '/vencanja/MJL_0476.jpg', '/vencanja/hero-image.jpg', '/vencanja/MJL_9670.jpg', '/vencanja/MJL_9758.jpg', '/vencanja/MJL_9826.jpg', '/vencanja/MJL_9870.jpg', '/vencanja/MJL_9925.jpg',
-            '/vencanja/MJL_9941.jpg', '/vencanja/MJL_9953.jpg', '/vencanja/MJL_9981.jpg', '/vencanja/NIKI1314.cc3bbda6.jpg', '/vencanja/WPI_1880.19f1f47f.jpg', '/vencanja/WPI_2129.ef5fc603.jpg',
-            '/vencanja/WPI_2900.76c3839d.jpg', '/vencanja/WPI_3158.dff77990.jpg']
+          return {
+            category1: ['/vencanja/01.jpg', '/vencanja/02.jpg', '/vencanja/07.jpg', '/vencanja/_MG_0286.5b3ae5a3.jpg', '/vencanja/_MG_1476.38c31d44.jpg', '/vencanja/_MG_1673.320ddadc.jpg',
+              '/vencanja/_MG_1695.cf02e300.jpg', '/vencanja/_MG_4532.84ed4b6f.jpg', '/vencanja/_MG_4538.c9a5200c.jpg', '/vencanja/_MG_4544.cdac3d3d.jpg', '/vencanja/_MG_4555.8582c457.jpg',
+              '/vencanja/_MG_4559.a5bb4c4e.jpg', '/vencanja/_MG_4570.c915cb43.jpg', '/vencanja/_MG_4644.a7c80b8d.jpg', '/vencanja/_MG_4654.1fed7aa3.jpg', '/vencanja/_MG_6948.7aa35d7a.jpg',
+              '/vencanja/_MG_7151.b9d2aa39.jpg', '/vencanja/_MG_7314.9a664d7d.jpg', '/vencanja/_MG_8855.52e294f3.jpg', '/vencanja/_MG_8867.ce4c68a0.jpg', '/vencanja/_MG_8961.de66cc6c.jpg',
+              '/vencanja/_MG_8974.dee04875.jpg', '/vencanja/IMG_1286.d0e20c71.jpg', '/vencanja/IMG_6897.f0293b3d.jpg', '/vencanja/IMG_6958.f6e28fa3.jpg', '/vencanja/IMG_6959.9ffe9354.jpg',
+              '/vencanja/JAR_1471.jpg', '/vencanja/JAR_1595.jpg', '/vencanja/JAR_1642.jpg', '/vencanja/JAR_1852.jpg', '/vencanja/JAR_1988.jpg', '/vencanja/JAR_2054.jpg', '/vencanja/JAR_2074.jpg',
+              '/vencanja/JAR_2149.jpg', '/vencanja/JAR_2158.jpg', '/vencanja/JAR_2203.jpg', '/vencanja/JAR_2422.jpg', '/vencanja/JAR_2547.jpg', '/vencanja/JAR_2631.jpg', '/vencanja/JAR_2819.jpg',
+              '/vencanja/JAR_2869.jpg', '/vencanja/JAR_2932.jpg', '/vencanja/JAR_6087.jpg', '/vencanja/JAR_6114.jpg', '/vencanja/JAR_6984.JPG', '/vencanja/JAR_7027.jpg', '/vencanja/JAR_7272.JPG',
+              '/vencanja/JAR_7276.JPG', '/vencanja/JAR_7310.JPG', '/vencanja/JAR_7315.jpg', '/vencanja/MJL_0011.jpg', '/vencanja/MJL_0027.jpg', '/vencanja/MJL_0105.jpg', '/vencanja/MJL_0129.jpg',
+              '/vencanja/MJL_0476.jpg', '/vencanja/hero-image.jpg', '/vencanja/MJL_9670.jpg', '/vencanja/MJL_9758.jpg', '/vencanja/MJL_9826.jpg', '/vencanja/MJL_9870.jpg', '/vencanja/MJL_9925.jpg',
+              '/vencanja/MJL_9941.jpg', '/vencanja/MJL_9953.jpg', '/vencanja/MJL_9981.jpg', '/vencanja/NIKI1314.cc3bbda6.jpg', '/vencanja/WPI_1880.19f1f47f.jpg', '/vencanja/WPI_2129.ef5fc603.jpg',
+              '/vencanja/WPI_2900.76c3839d.jpg', '/vencanja/WPI_3158.dff77990.jpg'],
+            category2: ['/prewedding/DAV_2965.jpg', '/prewedding/JAR_0006.jpg', '/prewedding/JAR_0109.jpg', '/prewedding/JAR_0119.jpg', '/prewedding/JAR_0182.jpg', '/prewedding/JAR_0493.jpg',
+              '/prewedding/JAR_0522.jpg', '/prewedding/JAR_0790.jpg', '/prewedding/JAR_0791.jpg', '/prewedding/JAR_9450.jpg', '/prewedding/JAR_9504.jpg', '/prewedding/JAR_9588.jpg',
+              '/prewedding/JAR_9619.jpg', '/prewedding/JAR_9624.jpg', '/prewedding/JAR_9724.jpg', '/prewedding/JAR_9759.jpg', '/prewedding/JAR_9778.jpg', '/prewedding/JAR_9884.jpg',
+              '/prewedding/JAR_9911.jpg', '/prewedding/MJL_4319.JPG', '/prewedding/MJL_4347.JPG', '/prewedding/MJL_4394.JPG', '/prewedding/MJL_4401.jpg', '/prewedding/MJL_4834.JPG',
+              '/prewedding/MJL_4874.jpg', '/prewedding/MJL_8560.jpg', '/prewedding/MJL_8568.jpg', '/prewedding/MJL_8726.jpg', '/prewedding/MJL_8761.jpg', '/prewedding/MJL_8803.jpg',
+              '/prewedding/MJL_8821.jpg', '/prewedding/MJL_8885.jpg', '/prewedding/MJL_9025.jpg']
+          }
         case '/krstenja':
           return []
         case '/rodjendani':
@@ -335,6 +435,9 @@ export default {
         default:
           return []
       }
+    },
+    noNestedTabs () {
+      return this.$route.path !== '/korporativne-fotografije' && this.$route.path !== '/vencanja'
     }
   }
 }
