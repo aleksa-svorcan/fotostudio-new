@@ -6,13 +6,10 @@
     <q-header elevated>
       <div class="content-container">
         <q-toolbar class="q-px-none">
-          <q-toolbar-title class="flex items-center justify-center q-px-none lt-sm">
-            <img class="logo" src="">
-          </q-toolbar-title>
           <q-toolbar-title class="flex items-center q-px-none gt-sm">
             <img class="logo" src="">
           </q-toolbar-title>
-          <div class="row gt-sm">
+          <div class="row q-pr-sm">
             <router-link to="/" v-if="$route.path !== '/'"><span class="text-white text-weight-bold cursor-pointer">Početna</span></router-link>
             <a v-if="$route.path === '/'" class="q-mr-md cursor-pointer" @click="scrollToElement('home-hero-section')">O nama</a>
             <a v-if="$route.path === '/'" class="q-mr-md cursor-pointer" @click="scrollToElement('work')">Portfolio</a>

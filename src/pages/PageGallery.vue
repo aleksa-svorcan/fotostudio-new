@@ -11,7 +11,7 @@
           <q-carousel
             v-if="noNestedTabs"
             ref="carousel"
-            class="relative-position window-height"
+            class="main-carousel"
             animated
             :fullscreen="fullscreen"
             v-model="imageSlide"
@@ -60,7 +60,7 @@
               <q-tab-panel name="category1">
                 <q-carousel
                   ref="nestedCarousel1"
-                  class="relative-position window-height"
+                  class="relative-position"
                   animated
                   :fullscreen="nestedFullscreen"
                   v-model="nestedImageSlide"
@@ -92,8 +92,8 @@
                     >
                       <q-btn
                         push round dense color="white" text-color="primary"
-                        :icon="fullscreen ? 'fullscreen_exit' : 'fullscreen'"
-                        @click="fullscreen = !fullscreen"
+                        :icon="nestedFullscreen ? 'fullscreen_exit' : 'fullscreen'"
+                        @click="nestedFullscreen = !nestedFullscreen"
                       ></q-btn>
                     </q-carousel-control>
                   </template>
@@ -102,7 +102,7 @@
               <q-tab-panel name="category2">
                 <q-carousel
                   ref="nestedCarousel2"
-                  class="relative-position window-height"
+                  class="relative-position"
                   animated
                   :fullscreen="nestedFullscreen"
                   v-model="nestedImageSlide"
@@ -134,8 +134,8 @@
                     >
                       <q-btn
                         push round dense color="white" text-color="primary"
-                        :icon="fullscreen ? 'fullscreen_exit' : 'fullscreen'"
-                        @click="fullscreen = !fullscreen"
+                        :icon="nestedFullscreen ? 'fullscreen_exit' : 'fullscreen'"
+                        @click="nestedFullscreen = !nestedFullscreen"
                       ></q-btn>
                     </q-carousel-control>
                   </template>
@@ -144,7 +144,7 @@
               <q-tab-panel name="category3">
                 <q-carousel
                   ref="nestedCarousel3"
-                  class="relative-position window-height"
+                  class="relative-position"
                   animated
                   :fullscreen="nestedFullscreen"
                   v-model="nestedImageSlide"
@@ -176,8 +176,8 @@
                     >
                       <q-btn
                         push round dense color="white" text-color="primary"
-                        :icon="fullscreen ? 'fullscreen_exit' : 'fullscreen'"
-                        @click="fullscreen = !fullscreen"
+                        :icon="nestedFullscreen ? 'fullscreen_exit' : 'fullscreen'"
+                        @click="nestedFullscreen = !nestedFullscreen"
                       ></q-btn>
                     </q-carousel-control>
                   </template>
@@ -186,7 +186,7 @@
               <q-tab-panel name="category4">
                 <q-carousel
                   ref="nestedCarousel4"
-                  class="relative-position window-height"
+                  class="relative-position"
                   animated
                   :fullscreen="nestedFullscreen"
                   v-model="nestedImageSlide"
@@ -218,8 +218,8 @@
                     >
                       <q-btn
                         push round dense color="white" text-color="primary"
-                        :icon="fullscreen ? 'fullscreen_exit' : 'fullscreen'"
-                        @click="fullscreen = !fullscreen"
+                        :icon="nestedFullscreen ? 'fullscreen_exit' : 'fullscreen'"
+                        @click="nestedFullscreen = !nestedFullscreen"
                       ></q-btn>
                     </q-carousel-control>
                   </template>
@@ -236,7 +236,7 @@
               <q-tab-panel name="category1">
                 <q-carousel
                   ref="nestedCarousel1"
-                  class="relative-position window-height"
+                  class="relative-position"
                   animated
                   :fullscreen="nestedFullscreen"
                   v-model="nestedImageSlide"
@@ -268,8 +268,8 @@
                     >
                       <q-btn
                         push round dense color="white" text-color="primary"
-                        :icon="fullscreen ? 'fullscreen_exit' : 'fullscreen'"
-                        @click="fullscreen = !fullscreen"
+                        :icon="nestedFullscreen ? 'fullscreen_exit' : 'fullscreen'"
+                        @click="nestedFullscreen = !nestedFullscreen"
                       ></q-btn>
                     </q-carousel-control>
                   </template>
@@ -278,7 +278,7 @@
               <q-tab-panel name="category2">
                 <q-carousel
                   ref="nestedCarousel2"
-                  class="relative-position window-height"
+                  class="relative-position"
                   animated
                   :fullscreen="nestedFullscreen"
                   v-model="nestedImageSlide"
@@ -310,8 +310,8 @@
                     >
                       <q-btn
                         push round dense color="white" text-color="primary"
-                        :icon="fullscreen ? 'fullscreen_exit' : 'fullscreen'"
-                        @click="fullscreen = !fullscreen"
+                        :icon="nestedFullscreen ? 'fullscreen_exit' : 'fullscreen'"
+                        @click="nestedFullscreen = !nestedFullscreen"
                       ></q-btn>
                     </q-carousel-control>
                   </template>
@@ -459,6 +459,17 @@ export default {
     .q-img__image {
       background-size: auto 100% !important;
     }
+  }
+}
+
+.main-carousel {
+  position: relative;
+  height: 100%;
+}
+
+.q-tab-panel {
+  @media only screen and (max-width: 600px) {
+    padding: 0;
   }
 }
 </style>

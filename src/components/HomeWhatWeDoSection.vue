@@ -134,7 +134,10 @@ export default {
 }
 
 .parallax-col {
-  min-height: 450px;
+  min-height: 350px;
+  @media only screen and (min-width: 600px) {
+    min-height: 450px;
+  }
 }
 
 .route-link {
