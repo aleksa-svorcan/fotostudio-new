@@ -26,14 +26,14 @@
       <div class="row text-weight-bold">
         <div class="col-12 col-md-6">
           <h4 class="q-mt-none text-center">Fotostudio Express</h4>
-          <h6 class="q-ma-none text-center">Pilota Mihaila Petrovića 65, Vidikovac (studio)</h6>
-          <h6 class="q-ma-none text-center">Bulevar Milutina Milankovića 120b, Novi Beograd (office)</h6>
+          <h6 class="q-ma-none text-center">Kneza Višeslava 142/8, Vidikovac</h6>
           <h6 class="q-ma-none text-center">Email: fotoexpressbg@gmail.com</h6>
           <h6 class="q-ma-none text-center">Telefon: 011 2321 338 / 063 340 100</h6>
         </div>
         <div class="col-12 col-md-6">
-          <h4 class="q-mt-none text-center">Foto/Video događaji</h4>
-          <h6 class="q-ma-none text-center">Email: info@fotostudio.co.rs</h6>
+          <h4 class="q-mt-none text-center">Foto/Video events</h4>
+          <h6 class="q-ma-none text-center">Bulevar Milutina Milankovića 120b/ lokal 16, Novi Beograd</h6>
+          <h6 class="q-ma-none text-center">Email: eventsfotoexpress@gmail.com</h6>
           <h6 class="q-ma-none text-center">Telefon: 066 922 3663</h6>
         </div>
         <div class="q-mt-md flex items-center justify-center full-width">

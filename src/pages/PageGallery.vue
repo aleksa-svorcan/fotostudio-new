@@ -3,7 +3,7 @@
     <h4 class="text-center q-mt-sm"><span class="section-title">{{galleryTitle}}</span></h4>
     <div>
       <q-tabs v-model="tab">
-        <q-tab name="images" icon="image" label="Slike"></q-tab>
+        <q-tab name="images" icon="image" label="Fotografije"></q-tab>
         <q-tab name="videos" icon="movie" label="Video" v-if="galleryVideos && galleryVideos.length > 0"></q-tab>
       </q-tabs>
       <q-tab-panels v-model="tab" animated>
